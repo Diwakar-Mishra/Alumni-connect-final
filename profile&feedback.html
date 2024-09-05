@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile & Feedback</title>
+    <style>
+      /* General Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f7f9fc;
+        color: #333;
+      }
+
+      header {
+        background-color: #007bff;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 2rem;
+        margin: 0;
+      }
+
+      /* Main Sections */
+      main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+
+      section {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 20px 0;
+        width: 100%;
+        max-width: 600px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+      }
+
+      /* Forms */
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      label {
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      input,
+      textarea,
+      select {
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+        font-size: 1rem;
+      }
+
+      textarea {
+        resize: none;
+        height: 100px;
+      }
+
+      button {
+        padding: 12px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        section {
+          margin: 10px;
+          width: 90%;
+        }
+
+        header h1 {
+          font-size: 1.8rem;
+        }
+
+        h2 {
+          font-size: 1.3rem;
+        }
+      }
+
+      footer {
+        background-color: #0056b3;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Manage Your Profile & Feedback</h1>
+    </header>
+
+    <main>
+      <section class="profile-section">
+        <h2>Profile Management</h2>
+        <form class="profile-form">
+          <label for="name">Full Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+          />
+
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+          />
+
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+          />
+
+          <label for="bio">Bio</label>
+          <textarea
+            id="bio"
+            name="bio"
+            placeholder="Tell us about yourself"
+          ></textarea>
+
+          <button type="submit" class="profile-btn">Update Profile</button>
+        </form>
+      </section>
+
+      <section class="feedback-section">
+        <h2>Participate in Feedback</h2>
+        <form class="feedback-form">
+          <label for="rating">Rate Us</label>
+          <select id="rating" name="rating">
+            <option value="" disabled selected>Select your rating</option>
+            <option value="5">Excellent</option>
+            <option value="4">Very Good</option>
+            <option value="3">Good</option>
+            <option value="2">Fair</option>
+            <option value="1">Poor</option>
+          </select>
+
+          <label for="comments">Comments</label>
+          <textarea
+            id="comments"
+            name="comments"
+            placeholder="Share your experience or suggestions"
+          ></textarea>
+
+          <button type="submit" class="feedback-btn">Submit Feedback</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Government Engineering College Alumni Association</p>
+    </footer>
+  </body>
+</html>

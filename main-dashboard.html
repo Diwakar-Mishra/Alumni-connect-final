@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alumni connect</title>
+    <!-- linking our own css -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- linking the font awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- =======================  navbar starts ===================  -->
+    <nav class="navbar">
+      <div class="logo">Alumni Connect</div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="./profile&feedback.html">Profile & feedback</a></li>
+        <li><a href="./networking.html">Connect & Engage</a></li>
+        <li><a href="./jobs.html">Job & Career</a></li>
+        <li><a href="./donationPortal.html">Donation Portal</a></li>
+        <li><a href="./logout.html">Logout</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+    <!-- =================== navbar ends ===================== -->
+    <!--==================== hero section starts ============= -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Welcome to Alumni Connect</h1>
+        <p>Reconnect, Network, and Grow with Your Fellow Alumni.</p>
+        <a href="#register" class="cta-btn">Join the Community</a>
+      </div>
+      <div class="hero-image">
+        <img
+          src="./assets/hero section.jpg"
+          alt="Alumni Network"
+          class="hero-actual-image"
+        />
+      </div>
+    </section>
+    <!-- ==================== hero section ends ============= -->
+    <!-- =================== events and stories section starts ================ -->
+    <!-- Events & Success Stories Section -->
+    <section id="events-success" class="events-success">
+      <div class="container">
+        <div class="section-header">
+          <h2>Upcoming Events & Success Stories</h2>
+          <p>
+            Stay informed about upcoming alumni events and get inspired by
+            alumni success stories.
+          </p>
+        </div>
+
+        <div class="two-columns">
+          <!-- Upcoming Events -->
+          <div class="events-column">
+            <h3>Upcoming Events</h3>
+            <div class="event-card">
+              <h4>
+                <a href="events/annual-meet-2024.html"
+                  >Annual Alumni Meet 2024</a
+                >
+              </h4>
+              <p>Date: March 15, 2024</p>
+              <p>Venue: College Auditorium</p>
+            </div>
+            <div class="event-card">
+              <h4>
+                <a href="events/tech-conference-2024.html"
+                  >Tech Conference by Alumni</a
+                >
+              </h4>
+              <p>Date: April 22, 2024</p>
+              <p>Venue: Virtual</p>
+            </div>
+            <div class="event-card">
+              <h4>
+                <a href="events/reunion-batch-2004.html">Reunion Batch 2004</a>
+              </h4>
+              <p>Date: June 10, 2024</p>
+              <p>Venue: College Lawn</p>
+            </div>
+            <button class="upcoming-events-btn">
+              <a href="./Events.html">All Upcoming Events</a>
+            </button>
+          </div>
+
+          <!-- Success Stories -->
+          <div class="stories-column">
+            <h3>Success Stories</h3>
+            <div class="story-card">
+              <h4><a href="stories/john-doe.html">John Doe</a></h4>
+              <p>
+                John, a 2004 graduate, is now the CEO of a leading tech company.
+                His innovative ideas have transformed the tech industry.
+              </p>
+            </div>
+            <div class="story-card">
+              <h4><a href="stories/jane-smith.html">Jane Smith</a></h4>
+              <p>
+                Jane, an alumna from 2010, launched a successful non-profit
+                organization that focuses on education for underprivileged
+                children.
+              </p>
+            </div>
+            <div class="story-card">
+              <h4><a href="stories/mark-robinson.html">Mark Robinson</a></h4>
+              <p>
+                Mark, a 2008 graduate, recently published a best-selling book on
+                leadership and entrepreneurship.
+              </p>
+            </div>
+            <button class="all-stories-btn" id="all-stories-btn">
+              <a href="./successStories.html">View All Stories</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- =================== events and stories section ends ================ -->
+    <!-- ================== job opportunities section starts ============== -->
+    <!-- Trending Job Opportunities Section -->
+    <section id="job-opportunities" class="job-opportunities">
+      <div class="container">
+        <div class="section-header">
+          <h2>Trending Job Opportunities</h2>
+          <p>
+            Explore the latest job openings from our alumni network and find
+            your next career opportunity.
+          </p>
+        </div>
+
+        <div class="job-cards">
+          <!-- Job Opportunity Card -->
+          <div class="job-card">
+            <h3>Software Engineer</h3>
+            <p>Company: Tech Innovations Ltd.</p>
+            <p>Location: New York, NY</p>
+            <p>Experience: 3+ years</p>
+            <a href="jobs/software-engineer.html" class="btn">View Details</a>
+          </div>
+
+          <!-- Job Opportunity Card -->
+          <div class="job-card">
+            <h3>Data Analyst</h3>
+            <p>Company: Data Insights Co.</p>
+            <p>Location: San Francisco, CA</p>
+            <p>Experience: 2+ years</p>
+            <a href="jobs/data-analyst.html" class="btn">View Details</a>
+          </div>
+
+          <!-- Job Opportunity Card -->
+          <div class="job-card">
+            <h3>Product Manager</h3>
+            <p>Company: Market Leaders Inc.</p>
+            <p>Location: Chicago, IL</p>
+            <p>Experience: 5+ years</p>
+            <a href="jobs/product-manager.html" class="btn">View Details</a>
+          </div>
+
+          <!-- Add more job cards as needed -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ================== job opportunities section ends ============== -->
+    <!-- ================== donation section starts ===================== -->
+    <!-- Donation Section -->
+    <section id="donation" class="donation">
+      <div class="container">
+        <div class="donation-content">
+          <div class="donation-text">
+            <h2>Support Our Alumni Community</h2>
+            <p>
+              Your generous donations help us to continue supporting our alumni
+              network, fund events, and create opportunities for future
+              generations. Every contribution makes a difference and strengthens
+              the bonds within our community.
+            </p>
+            <a href="./donationPortal.html" class="btn-donate">Donate Now</a>
+          </div>
+          <div class="donation-image">
+            <img
+              src="./assets/donation portal.jpg"
+              alt="Support Alumni Community"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================== donation section ends ===================== -->
+    <!-- ================= future goals section starts ================ -->
+    <!-- Future Goals Section -->
+    <section id="future-goals" class="future-goals">
+      <div class="container">
+        <div class="goals-content">
+          <div class="goals-image">
+            <img src="./assets/future goals.jpg" alt="College Image" />
+          </div>
+          <div class="goals-text">
+            <h2>Our Future Goals</h2>
+            <p>
+              At [College Name], we are committed to continuous improvement and
+              growth. Here are some of our key future goals:
+            </p>
+            <ul>
+              <li>
+                <strong>Expansion of Campus Facilities:</strong> We plan to
+                build new classrooms, laboratories, and recreational areas to
+                enhance the learning environment.
+              </li>
+              <li>
+                <strong>Increased Research Opportunities:</strong> We aim to
+                establish more research centers and offer additional grants to
+                support innovative projects.
+              </li>
+              <li>
+                <strong>Global Collaborations:</strong> We seek to form
+                partnerships with international universities to broaden our
+                students' horizons and academic exchange.
+              </li>
+              <li>
+                <strong>Community Engagement:</strong> We will increase our
+                involvement in local community projects and initiatives to
+                foster social responsibility among students.
+              </li>
+              <li>
+                <strong>Enhanced Technology Integration:</strong> We plan to
+                integrate advanced technology into our curriculum and campus
+                facilities to prepare students for the digital future.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= future goals section ends ================ -->
+    <!-- ===================== networking and directory page starts ============= -->
+    <!-- Networking and Directory Section -->
+    <section id="networking-directory" class="networking-directory">
+      <div class="container">
+        <div class="networking-content">
+          <div class="networking-text">
+            <h2>Connect with Alumni</h2>
+            <p>
+              Our Networking and Directory page offers a comprehensive platform
+              for alumni to connect with one another. You can search for alumni
+              based on various criteria, including industry, location, and
+              interests. Whether you're looking for career advice, potential
+              collaborations, or just catching up with old friends, our
+              directory helps you make valuable connections within our alumni
+              community.
+            </p>
+            <a href="networking-directory.html" class="btn-link"
+              >Explore Networking & Directory</a
+            >
+          </div>
+          <div class="networking-image">
+            <img
+              src="./assets/networking and directories.jpg"
+              alt="Networking and Directory"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== networking and directory page ends ============= -->
+    <!--===================== footer section starts ========================== -->
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <!-- About Section -->
+          <div class="footer-about">
+            <h2>About Us</h2>
+            <p>
+              We are dedicated to fostering a vibrant and engaged alumni
+              community. Our platform offers numerous resources and
+              opportunities for alumni to connect, support each other, and stay
+              updated with the latest news and events.
+            </p>
+          </div>
+
+          <!-- Quick Links Section -->
+          <div class="footer-links">
+            <h2>Quick Links</h2>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#events">Events</a></li>
+              <li><a href="#stories">Success Stories</a></li>
+              <li>
+                <a href="#networking-directory">Networking & Directory</a>
+              </li>
+              <li><a href="#donation">Donate</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Section -->
+          <div class="footer-contact">
+            <h2>Contact Us</h2>
+            <p>
+              Email: <a href="mailto:contact@alumni.com">contact@alumni.com</a>
+            </p>
+            <p>Phone: +1 234 567 890</p>
+            <p>Address: 123 Alumni Lane, College City, CO 12345</p>
+          </div>
+
+          <!-- Social Media Section -->
+          <div class="footer-social">
+            <h2>Follow Us</h2>
+            <div class="social-icons">
+              <a href="https://facebook.com" target="_blank" class="social-icon"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a href="https://twitter.com" target="_blank" class="social-icon"
+                ><i class="fa-brands fa-x-twitter"></i
+              ></a>
+              <a href="https://linkedin.com" target="_blank" class="social-icon"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                class="social-icon"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 [College Name]. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!--===================== footer section ends ========================== -->
+    <script src="script.js"></script>
+  </body>
+</html>

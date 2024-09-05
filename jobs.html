@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Portal</title>
+    <style>
+      /* General Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Body and Header */
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+
+      header {
+        background: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        text-align: center;
+      }
+
+      header h1 {
+        margin: 0;
+      }
+
+      /* Main Section */
+      main {
+        padding: 20px;
+      }
+
+      #jobs {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+      }
+
+      .job {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .job:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .job h2 {
+        margin-top: 0;
+        font-size: 1.5em;
+        color: #ff5a33;
+      }
+
+      .job p {
+        margin: 10px 0;
+      }
+
+      .job-details {
+        margin-top: 10px;
+      }
+
+      .job-details span {
+        display: inline-block;
+        background-color: #f2f2f2;
+        padding: 5px 10px;
+        border-radius: 4px;
+        margin-right: 10px;
+        font-size: 0.9em;
+      }
+
+      /* Button Styling */
+      .apply-button {
+        display: inline-block;
+        padding: 10px 15px;
+        background-color: #28a745;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 1em;
+        transition: background-color 0.3s ease;
+      }
+
+      .apply-button:hover {
+        background-color: #218838;
+      }
+
+      footer {
+        background: #007bff;
+        color: #fff;
+        text-align: center;
+        padding: 10px 20px;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Job Portal</h1>
+    </header>
+    <main>
+      <section id="jobs">
+        <!-- Job listings will be inserted here by JavaScript -->
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 Government Engineering College Alumni Association</p>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const jobs = [
+          {
+            title: "Software Engineer",
+            company: "Tech Innovators",
+            location: "New York, NY",
+            description:
+              "We are looking for a Software Engineer with 3+ years of experience in JavaScript and Node.js.",
+            type: "Full-time",
+            salary: "$90,000 - $120,000",
+            applyLink: "https://example.com/apply/software-engineer",
+          },
+          {
+            title: "Data Analyst",
+            company: "DataCorp",
+            location: "San Francisco, CA",
+            description:
+              "Join our team as a Data Analyst to work with big data and provide valuable business insights.",
+            type: "Full-time",
+            salary: "$75,000 - $95,000",
+            applyLink: "https://example.com/apply/data-analyst",
+          },
+          {
+            title: "Project Manager",
+            company: "Global Solutions",
+            location: "Remote",
+            description:
+              "Seeking an experienced Project Manager to lead cross-functional teams and ensure timely project delivery.",
+            type: "Contract",
+            salary: "$85,000 - $105,000",
+            applyLink: "https://example.com/apply/project-manager",
+          },
+          {
+            title: "UI/UX Designer",
+            company: "Creative Minds",
+            location: "Austin, TX",
+            description:
+              "We are in search of a talented UI/UX Designer to create engaging and intuitive user interfaces.",
+            type: "Full-time",
+            salary: "$70,000 - $90,000",
+            applyLink: "https://example.com/apply/ui-ux-designer",
+          },
+          {
+            title: "Cybersecurity Specialist",
+            company: "SecureNet",
+            location: "Washington, DC",
+            description:
+              "Looking for a Cybersecurity Specialist to protect our digital assets from threats and vulnerabilities.",
+            type: "Full-time",
+            salary: "$95,000 - $125,000",
+            applyLink: "https://example.com/apply/cybersecurity-specialist",
+          },
+          {
+            title: "Marketing Coordinator",
+            company: "MarketForward",
+            location: "Chicago, IL",
+            description:
+              "Seeking a Marketing Coordinator to assist in campaign management and social media strategies.",
+            type: "Part-time",
+            salary: "$45,000 - $60,000",
+            applyLink: "https://example.com/apply/marketing-coordinator",
+          },
+          {
+            title: "Human Resources Manager",
+            company: "People First",
+            location: "Boston, MA",
+            description:
+              "We need an HR Manager to oversee employee relations and ensure HR compliance within the company.",
+            type: "Full-time",
+            salary: "$80,000 - $100,000",
+            applyLink: "https://example.com/apply/hr-manager",
+          },
+          {
+            title: "Web Developer",
+            company: "DevHouse",
+            location: "Seattle, WA",
+            description:
+              "Join us as a Web Developer to build and maintain web applications using the latest technologies.",
+            type: "Full-time",
+            salary: "$85,000 - $110,000",
+            applyLink: "https://example.com/apply/web-developer",
+          },
+          {
+            title: "Financial Analyst",
+            company: "MoneyMatters",
+            location: "Denver, CO",
+            description:
+              "Looking for a Financial Analyst to help guide financial decisions through data analysis and forecasting.",
+            type: "Full-time",
+            salary: "$70,000 - $95,000",
+            applyLink: "https://example.com/apply/financial-analyst",
+          },
+          {
+            title: "Technical Support Specialist",
+            company: "HelpDesk Solutions",
+            location: "Orlando, FL",
+            description:
+              "We need a Technical Support Specialist to provide excellent customer service and tech support.",
+            type: "Full-time",
+            salary: "$50,000 - $65,000",
+            applyLink: "https://example.com/apply/technical-support-specialist",
+          },
+        ];
+
+        const jobsContainer = document.getElementById("jobs");
+
+        jobs.forEach((job) => {
+          const jobElement = document.createElement("div");
+          jobElement.className = "job";
+          jobElement.innerHTML = `
+            <h2>${job.title}</h2>
+            <p><strong>Company:</strong> ${job.company}</p>
+            <p><strong>Location:</strong> ${job.location}</p>
+            <div class="job-details">
+                <span><strong>Job Type:</strong> ${job.type}</span>
+                <span><strong>Salary:</strong> ${job.salary}</span>
+            </div>
+            <p>${job.description}</p>
+            <a href="${job.applyLink}" class="apply-button" target="_blank">Apply Now</a>
+        `;
+          jobsContainer.appendChild(jobElement);
+        });
+      });
+    </script>
+  </body>
+</html>

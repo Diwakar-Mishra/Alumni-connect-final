@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <style>
+      h2 {
+        color: #f7f7f7;
+      }
+      body {
+        background-image: url(./assets/login\ page.jpg);
+        background-size: cover;
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .form-container {
+        width: 90%;
+        max-width: 400px;
+        padding: 20px;
+        background-color: rgba(98, 181, 119, 0.219);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        position: relative;
+        overflow: hidden;
+        margin-top: 50px;
+      }
+      .form-section {
+        display: none;
+        animation: slide-in 0.5s forwards;
+      }
+      .form-section.active {
+        display: block;
+      }
+      .form-section:not(.active) {
+        animation: slide-out 0.5s forwards;
+      }
+      @keyframes slide-in {
+        from {
+          opacity: 0;
+          transform: translateX(100%);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      @keyframes slide-out {
+        from {
+          opacity: 1;
+          transform: translateX(0);
+        }
+        to {
+          opacity: 0;
+          transform: translateX(-100%);
+        }
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      input,
+      select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box; /* Add this line */
+      }
+      button {
+        padding: 10px 15px;
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        display: block; /* Add this line */
+        width: 100%; /* Add this line */
+        margin-top: 10px; /* Add this line */
+      }
+      button:hover {
+        background-color: #218838;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <!-- Personal Information Section -->
+      <div id="section-1" class="form-section active">
+        <h2>Personal Details</h2>
+        <div class="form-group">
+          <label for="full-name">Full Name:</label>
+          <input type="text" id="full-name" name="full-name" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" />
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" />
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password:</label>
+          <input
+            type="password"
+            id="confirm-password"
+            name="confirm-password"
+          />
+        </div>
+        <div class="form-group">
+          <label for="phone-number">Phone Number:</label>
+          <input type="tel" id="phone-number" name="phone-number" />
+        </div>
+        <div class="form-group">
+          <label for="dob">Date of Birth:</label>
+          <input type="date" id="dob" name="dob" />
+        </div>
+        <button type="button" onclick="showSection(2)">Next</button>
+      </div>
+
+      <!-- Educational Background Section -->
+      <div id="section-2" class="form-section">
+        <h2>Educational Details</h2>
+        <div class="form-group">
+          <label for="college">College/University Name:</label>
+          <input type="text" id="college" name="college" />
+        </div>
+        <div class="form-group">
+          <label for="graduation-year">Year of Graduation:</label>
+          <select id="graduation-year" name="graduation-year">
+            <!-- Options will be populated by JavaScript -->
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="degree">Degree:</label>
+          <input type="text" id="degree" name="degree" />
+        </div>
+        <div class="form-group">
+          <label for="field-of-study">Field of Study:</label>
+          <input type="text" id="field-of-study" name="field-of-study" />
+        </div>
+        <button type="button" onclick="showSection(1)">Previous</button>
+        <button type="button" onclick="showSection(3)">Next</button>
+      </div>
+
+      <!-- Professional Information Section -->
+      <div id="section-3" class="form-section">
+        <div class="form-group">
+          <h2>Professional Details</h2>
+          <label for="employer">Current Employer:</label>
+          <input type="text" id="employer" name="employer" />
+        </div>
+        <div class="form-group">
+          <label for="job-title">Job Title:</label>
+          <input type="text" id="job-title" name="job-title" />
+        </div>
+        <div class="form-group">
+          <label for="industry">Industry:</label>
+          <input type="text" id="industry" name="industry" />
+        </div>
+        <div class="form-group">
+          <label for="experience">Years of Experience:</label>
+          <input type="number" id="experience" name="experience" />
+        </div>
+        <div class="form-group">
+          <label for="linkedin">LinkedIn Profile (optional):</label>
+          <input type="url" id="linkedin" name="linkedin" />
+        </div>
+        <button type="button" onclick="showSection(2)">Previous</button>
+        <button type="submit" onclick="submitForm()">Submit</button>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const graduationYearSelect = document.getElementById("graduation-year");
+        const currentYear = new Date().getFullYear();
+        const yearsRange = 5; // Number of years to include before and after the current year
+
+        // Generate years from (currentYear - yearsRange) to (currentYear + yearsRange)
+        for (
+          let year = currentYear - yearsRange;
+          year <= currentYear + yearsRange;
+          year++
+        ) {
+          const option = document.createElement("option");
+          option.value = year;
+          option.textContent = year;
+          graduationYearSelect.appendChild(option);
+        }
+      });
+
+      function showSection(section) {
+        const allSections = document.querySelectorAll(".form-section");
+        allSections.forEach((sec) => sec.classList.remove("active"));
+        document.getElementById("section-" + section).classList.add("active");
+      }
+
+      function submitForm() {
+        alert("Form submitted successfully!");
+        window.location.href = "./main-dashboard.html";
+      }
+    </script>
+  </body>
+</html>

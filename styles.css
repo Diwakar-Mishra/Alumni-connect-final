@@ -1,0 +1,838 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+/* ====================== navbar starts  ===================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #333;
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #f0a500;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    top: 0;
+    background-color: #333;
+    flex-direction: column;
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+
+  .nav-links li {
+    margin: 20px 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-active {
+    transform: translateX(0);
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
+/* ===================== navbar ends ================= */
+/* ===================== hero section starts ===========  */
+.hero {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 100px 50px;
+  background-color: #f4f4f4;
+  height: 100vh;
+  max-width: 1200px;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #ff7f50;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.cta-btn:hover {
+  background-color: #ff5a33;
+}
+
+.hero-image img {
+  max-width: 500px;
+  border-radius: 10px;
+  max-height: 380px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .hero-image img {
+    max-width: 90%;
+    margin-top: 20px;
+  }
+}
+/* ===================== hero section ends ================== */
+/* ===================== events and stories section starts ================ */
+/* Events & Success Stories Section */
+.events-success {
+  background-color: #f8f8f8;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.events-success .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header h2 {
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+}
+
+.section-header p {
+  font-size: 1.2rem;
+  margin-bottom: 50px;
+  color: #666;
+}
+
+.two-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  width: 100%;
+}
+
+/* Common Card Styles */
+.events-column .event-card,
+.stories-column .story-card {
+  background-color: white;
+  padding: 30px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.events-column .event-card:hover,
+.stories-column .story-card:hover {
+  transform: translateY(-5px);
+}
+
+.events-column h3,
+.stories-column h3 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* Event Cards */
+.event-card h4 {
+  font-size: 1.6rem;
+  color: #ff7f50;
+  margin-bottom: 10px;
+}
+
+.event-card p {
+  font-size: 1.1rem;
+  color: #666;
+}
+.upcoming-events-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #ff7f50;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+  border: none;
+}
+.upcoming-events-btn a{
+  color: white !important;
+}
+.upcoming-events-btn:hover {
+  background-color: #ff5a33;
+}
+
+/* Success Story Cards */
+.story-card h4 {
+  font-size: 1.6rem;
+  color: #ff7f50;
+  margin-bottom: 10px;
+}
+
+.story-card p {
+  font-size: 1.1rem;
+  color: #666;
+}
+.all-stories-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #ff7f50;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+  border: none;
+}
+.all-stories-btn a{
+  color: white !important;
+}
+
+.all-stories-btn:hover {
+  background-color: #ff5a33;
+}
+
+/* Link styling */
+.events-column a,
+.stories-column a {
+  color: #ff7f50;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.events-column a:hover,
+.stories-column a:hover {
+  color: #ff5a33;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .two-columns {
+    flex-direction: column;
+  }
+
+  .events-column,
+  .stories-column {
+    margin: 20px 0;
+  }
+}
+
+
+
+/* ========================== events and stories section ends ======================= */
+/* =========================== job opportunities section starts ====================== */
+/* Trending Job Opportunities Section */
+.job-opportunities {
+  background-color: #f5f5f5;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.job-opportunities .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header h2 {
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+}
+
+.section-header p {
+  font-size: 1.2rem;
+  margin-bottom: 50px;
+  color: #666;
+}
+
+.job-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  width: 100%;
+}
+
+.job-card {
+  background-color: white;
+  padding: 30px;
+  width: 300px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  text-align: left;
+  /* extra added */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+}
+
+.job-card h3 {
+  font-size: 1.6rem;
+  color: #ff7f50;
+  margin-bottom: 15px;
+}
+
+.job-card a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.job-card a:hover {
+  color: white;
+}
+
+.job-card p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #ff7f50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ff5a33;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .job-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .job-card {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+/* =========================== job opportunities section ends ====================== */
+/* =========================== donation section starts ============================= */
+/* Donation Section */
+.donation {
+  background-color: #ff7f50;
+  color: white;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.donation .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding : 15px;
+}
+
+.donation-content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.donation-text {
+  max-width: 500px;
+  text-align: left;
+}
+
+.donation-text h2 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+}
+
+.donation-text p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #fff;
+  line-height: 1.6;
+}
+
+.btn-donate {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #fff;
+  color: #ff7f50;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-donate:hover {
+  background-color: #ff5a33;
+  color: #fff;
+}
+
+.donation-image img {
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .donation-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .donation-text {
+    max-width: 100%;
+  }
+
+  .btn-donate {
+    font-size: 1rem;
+    padding: 12px 25px;
+  }
+}
+/* =========================== donation section endts ============================= */
+/* =========================== future goals section starts ======================= */
+/* Future Goals Section */
+.future-goals {
+  background-color: #f0f0f0;
+  padding: 80px 0;
+}
+
+.future-goals .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.goals-content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+
+
+.goals-image {
+  flex: 1;
+}
+
+.goals-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.goals-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.goals-text h2 {
+  font-size: 2.6rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.goals-text p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.goals-text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.goals-text li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.goals-text li strong {
+  color: #ff7f50;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .goals-content {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .goals-image {
+    margin-bottom: 20px;
+  }
+
+  .goals-text {
+    max-width: 100%;
+  }
+
+  .goals-text h2 {
+    font-size: 2.2rem;
+  }
+
+  .goals-text p {
+    font-size: 1rem;
+  }
+
+  .goals-text li {
+    font-size: 1rem;
+  }
+}
+
+/* =========================== future goals section ends ======================= */
+/* =========================== networking and directory page starts =============== */
+/* Networking and Directory Section */
+.networking-directory {
+  background-color: #e0e0e0;
+  padding: 80px 0;
+}
+
+.networking-directory .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.networking-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.networking-text {
+  flex: 1;
+  max-width: 500px;
+  text-align: left;
+}
+
+.networking-text h2 {
+  font-size: 2.6rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.networking-text p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.btn-link {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #ff7f50;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-link:hover {
+  background-color: #ff5a33;
+}
+
+.networking-image {
+  flex: 1;
+}
+
+.networking-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .networking-content {
+    padding : 20px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .networking-text {
+    max-width: 100%;
+  }
+
+  .networking-image {
+    margin-top: 20px;
+  }
+
+  .networking-text h2 {
+    font-size: 2.2rem;
+  }
+
+  .networking-text p {
+    font-size: 1rem;
+  }
+
+  .btn-link {
+    font-size: 1rem;
+    padding: 12px 25px;
+  }
+}
+
+/* =========================== networking and directory page ends =============== */
+/* =========================== footer section starts =========================== */
+/* Footer */
+/* Footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 0;
+  font-size: 0.9rem;
+}
+
+.footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-about, .footer-links, .footer-contact, .footer-social {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-about h2, .footer-links h2, .footer-contact h2, .footer-social h2 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: #ff7f50;
+}
+
+.footer-about p, .footer-contact p {
+  font-size: 1rem;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #ff7f50;
+}
+
+.footer-social .social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.footer-social .social-icon {
+  display: inline-block;
+}
+
+.footer-social .social-icons a i{
+  width: 30px;
+  height: 40px;
+  transition: opacity 0.3s ease;
+  color:#ddd;
+}
+
+.footer-social .social-icons a:hover {
+  opacity: 0.8;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid #444;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+.footer-contact a{
+  color: whitesmoke;
+  text-decoration: underline;
+}
+.footer-contact a:hover{
+  color:#ff7f50;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-about, .footer-links, .footer-contact, .footer-social {
+    margin-bottom: 20px;
+  }
+
+  .footer-social .social-icons {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .footer-social .social-icon img {
+    width: 35px;  /* Slightly larger for better visibility on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-social .social-icons {
+    justify-content: space-around;
+    gap: 8px;
+  }
+
+  .footer-social .social-icon img {
+    width: 28px;  /* Adjusted size for extra small screens */
+  }
+}
+
+/* =========================== footer section ends =========================== */

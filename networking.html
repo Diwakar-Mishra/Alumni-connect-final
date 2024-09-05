@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connect with Alumni</title>
+    <style>
+      /* General Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f4f7fc;
+        color: #333;
+        padding-bottom: 60px;
+      }
+
+      header {
+        background-color: #007bff;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .filter-section,
+      .alumni-section {
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 800px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      .filter-form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .filter-form label,
+      .filter-form select {
+        flex: 1 1 10%;
+      }
+
+      select {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+        margin-bottom: 0px;
+      }
+
+      .filter-btn {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+      }
+
+      .filter-btn:hover {
+        background-color: #0056b3;
+      }
+
+      /* Alumni List */
+      #alumni-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .alumni-profile {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+      }
+
+      .alumni-profile h3 {
+        font-size: 1.3rem;
+        color: #007bff;
+        margin-bottom: 5px;
+      }
+
+      .alumni-profile p {
+        font-size: 1rem;
+        color: #555;
+      }
+
+      footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .filter-form {
+          flex-direction: column;
+        }
+
+        header h1 {
+          font-size: 1.8rem;
+        }
+
+        h2 {
+          font-size: 1.3rem;
+        }
+
+        .alumni-profile h3 {
+          font-size: 1.2rem;
+        }
+
+        .alumni-profile p {
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Connect with Alumni</h1>
+    </header>
+
+    <section class="filter-section">
+      <h2>Apply Filters to Find Alumni</h2>
+      <form class="filter-form">
+        <label for="year">Year of Graduation</label>
+        <select id="year">
+          <option value="" disabled selected>Select Year</option>
+          <option value="2024">2024</option>
+          <option value="2023">2023</option>
+          <option value="2022">2022</option>
+          <option value="2021">2021</option>
+        </select>
+
+        <label for="industry">Industry</label>
+        <select id="industry">
+          <option value="" disabled selected>Select Industry</option>
+          <option value="IT">IT</option>
+          <option value="Finance">Finance</option>
+          <option value="Healthcare">Healthcare</option>
+          <option value="Education">Education</option>
+        </select>
+
+        <label for="location">Location</label>
+        <select id="location">
+          <option value="" disabled selected>Select Location</option>
+          <option value="USA">USA</option>
+          <option value="India">India</option>
+          <option value="UK">UK</option>
+          <option value="Canada">Canada</option>
+        </select>
+
+        <button type="button" class="filter-btn" onclick="filterAlumni()">
+          Apply Filters
+        </button>
+      </form>
+    </section>
+
+    <section class="alumni-section">
+      <h2>Alumni List</h2>
+      <div id="alumni-list">
+        <!-- Alumni profiles will be displayed here -->
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 Government Engineering College Alumni Association</p>
+    </footer>
+
+    <script>
+      // Alumni Data (Mockup)
+      const alumniData = [
+        { name: "John Doe", year: 2024, industry: "IT", location: "USA" },
+        {
+          name: "Jane Smith",
+          year: 2023,
+          industry: "Finance",
+          location: "India",
+        },
+        {
+          name: "Michael Johnson",
+          year: 2022,
+          industry: "Healthcare",
+          location: "Canada",
+        },
+        {
+          name: "Emily Davis",
+          year: 2021,
+          industry: "Education",
+          location: "UK",
+        },
+        // Add more alumni data here
+      ];
+
+      // Function to filter and display alumni
+      function filterAlumni() {
+        const year = document.getElementById("year").value;
+        const industry = document.getElementById("industry").value;
+        const location = document.getElementById("location").value;
+
+        const alumniList = document.getElementById("alumni-list");
+        alumniList.innerHTML = ""; // Clear previous list
+
+        const filteredAlumni = alumniData.filter((alumni) => {
+          return (
+            (!year || alumni.year == year) &&
+            (!industry || alumni.industry == industry) &&
+            (!location || alumni.location == location)
+          );
+        });
+
+        if (filteredAlumni.length === 0) {
+          alumniList.innerHTML =
+            "<p>No alumni found based on your filters.</p>";
+        } else {
+          filteredAlumni.forEach((alumni) => {
+            const alumniProfile = document.createElement("div");
+            alumniProfile.classList.add("alumni-profile");
+            alumniProfile.innerHTML = `
+                <h3>${alumni.name}</h3>
+                <p>Year of Graduation: ${alumni.year}</p>
+                <p>Industry: ${alumni.industry}</p>
+                <p>Location: ${alumni.location}</p>
+            `;
+            alumniList.appendChild(alumniProfile);
+          });
+        }
+      }
+    </script>
+  </body>
+</html>

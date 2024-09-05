@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Success Stories</title>
+    <style>
+      /* General Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Body and Header */
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+
+      header {
+        background: #333;
+        color: #fff;
+        padding: 10px 20px;
+        text-align: center;
+      }
+
+      header h1 {
+        margin: 0;
+      }
+
+      /* Main Section */
+      main {
+        padding: 20px;
+      }
+
+      #stories {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+      }
+
+      .story {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .story:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .story img {
+        width: 400px;
+        height: 250px;
+        object-fit: contain;
+        margin-top: 15px;
+      }
+
+      .story-content {
+        padding: 15px;
+      }
+
+      .story-content h2 {
+        margin-top: 0;
+      }
+
+      footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px 20px;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Success Stories</h1>
+    </header>
+    <main>
+      <section id="stories">
+        <!-- Success stories will be inserted here by JavaScript -->
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 Government Engineering College Alumni Association</p>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const stories = [
+          {
+            title: "Alumnus A Achieves Great Success",
+            image: "./assets/person1.jpg",
+            description:
+              "This is a short description of the success story of Alumnus A. They have achieved great things in their field and continue to inspire others.",
+          },
+          {
+            title: "Alumnus B Makes a Mark",
+            image: "./assets/person 2.jpg",
+            description:
+              "Alumnus B has made a significant impact in their industry, demonstrating the excellence fostered at our institution.",
+          },
+          {
+            title: "Alumnus C Wins Prestigious Award",
+            image: "./assets/person 3.jpg",
+            description:
+              "Alumnus C won a prestigious award for their groundbreaking work in the field of technology.",
+          },
+          {
+            title: "Alumnus D Starts Successful Startup",
+            image: "./assets/person4.jpg",
+            description:
+              "Alumnus D founded a successful startup that is revolutionizing the industry.",
+          },
+          {
+            title: "Alumnus E Becomes a Leading Researcher",
+            image: "./assets/person5.jpg",
+            description:
+              "Alumnus E has become a leading researcher in their field, contributing valuable knowledge and insights.",
+          },
+          {
+            title: "Alumnus F Publishes Bestselling Book",
+            image: "./assets/person6.jpg",
+            description:
+              "Alumnus F published a bestselling book that has received critical acclaim and widespread readership.",
+          },
+          {
+            title: "Alumnus G Achieves Milestone in Medicine",
+            image: "./assets/person7.jpg",
+            description:
+              "Alumnus G has achieved a significant milestone in the field of medicine, improving patient care and treatment.",
+          },
+          {
+            title: "Alumnus H Wins International Competition",
+            image: "./assets/person8.jpg",
+            description:
+              "Alumnus H won an international competition, showcasing their exceptional skills and talents.",
+          },
+        ];
+
+        const storiesContainer = document.getElementById("stories");
+
+        stories.forEach((story) => {
+          const storyElement = document.createElement("div");
+          storyElement.className = "story";
+          storyElement.innerHTML = `
+            <img src="${story.image}" alt="${story.title}">
+            <div class="story-content">
+                <h2>${story.title}</h2>
+                <p>${story.description}</p>
+            </div>
+        `;
+          storiesContainer.appendChild(storyElement);
+        });
+      });
+    </script>
+  </body>
+</html>
